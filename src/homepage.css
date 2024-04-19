@@ -1,0 +1,352 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: white;
+    width: 100%;
+}
+
+.navBar {
+    width: 100%;
+    max-width: 100%; 
+    padding: 0; 
+    background-color: #1E1E1E;
+}
+
+.nav-cont {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.nav-icons, .search-container, .nav-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.search-container {
+    flex-grow: 1; 
+    justify-content: center;
+}
+
+.search-bar {
+    width: 100%; 
+    max-width: 450px; 
+    height: 30px;
+}
+.sign-in{ 
+    margin: 4px 10px;
+    font-size: 20px;
+    color: white; 
+    font-family: 'Outfit';
+    font-weight: 800;
+    word-wrap: break-word; 
+    background-color: transparent;
+    border: 0;
+}
+
+.en{ 
+    margin: 4px 10px;
+    font-size: 20px;
+    color: white; 
+    font-family: 'Outfit';
+    font-weight: 800;
+    word-wrap: break-word; 
+    background-color: transparent;
+    border: 0;
+    padding-right: 30px;
+}
+
+.movie-slider {
+    width: 100%;
+    border-radius: 94px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center; 
+    position: relative;
+}
+
+.dune-img{ 
+    width: 100%;
+    height: 700px;
+    object-fit: cover
+}
+.overlay-content {
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.dune-mov-title{ 
+    margin: 1px; 
+    padding: 8px;
+    padding-left: 45%;
+    color: black; 
+    font-size: 64px;
+    font-family: 'Outfit'; 
+    font-weight: 700; 
+    word-wrap: break-word;
+}
+.dune-mov-des{ 
+    margin: 10px 0;
+    padding: 5px;
+    padding-left: 45%;
+    color: black; 
+    font-size: 20px;
+    font-family: 'Outfit';
+    font-weight: 400; 
+    word-wrap: break-word;
+    text-transform: capitalize;
+}
+
+.watch-score-cont{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 90px; 
+    padding-left: 45%;
+    padding-top: 15px;;
+}
+.circle-score {
+    max-height: 100px; 
+    flex-shrink: 0; 
+}
+.watch-btn {
+    margin: 4px 10px;
+    font-size: 20px;
+    color: black; 
+    width: 200px;
+    height: 45%;
+    font-family: Outfit;
+    text-align: center;
+    font-weight: 800;
+    word-wrap: break-word; 
+    background-color: (255, 255, 255, 0.58);
+    padding: 8px;
+    border-radius: 34px;
+    border: 0.0px black solid;
+}
+
+.movie-ctn{ 
+    width: 100%; 
+    height: 100%; 
+    background-color: #1E1E1E;
+}
+
+.titles {
+    display: flex;
+    justify-content: space-evenly; 
+    align-items: center;
+    width: 100%;
+}
+
+.mov-tit, .tv-tit, .ppl-tit, .com-tit { 
+    margin: 4px 10px;
+    font-size: 30px;
+    color: white; 
+    font-family: 'Outfit';
+    font-weight: 800;
+    word-wrap: break-word; 
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    letter-spacing: 1px;
+    display: inline-block;
+    transition-duration: 0.4s;
+}
+
+.titles p {
+    flex: 1;
+    text-align: center; 
+    padding: 10px 10px;
+}
+
+.mov-tit:hover{ 
+    color:#FBD651;
+}
+.tv-tit:hover{ 
+    color:#FBD651;
+}
+.ppl-tit:hover{ 
+    color:#FBD651;
+}
+.com-tit:hover{ 
+    color:#FBD651;
+}
+.mov-holder {
+    text-align: center; 
+    padding: 20px; 
+}
+.mov-title{ 
+    margin: 10px 0;
+    padding: 15px;
+    margin-left: 20px;
+    color: white; 
+    font-size: 32px;
+    font-family: 'Outfit';
+    font-weight: 700; 
+    word-wrap: break-word;
+    text-transform: capitalize;
+}
+.movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px; 
+    gap: 5px; 
+}
+
+.movie {
+    flex: 1 1 200px; 
+    min-width: 150px; 
+    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+}
+
+.mov-img {
+    width: 100%; 
+    height: 350px; 
+    max-width: 300px; 
+    margin-bottom: 10px;
+}
+.mov-title2 {
+    margin-top: 10px;
+    color: white; 
+    font-size: 22px; 
+    font-family: 'Outfit'; 
+}
+.hidden {
+    display: none;
+}
+
+.arrow-button {
+    display: flex;
+    margin-top: 150px;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    border: none;
+    color: #fff; 
+    font-size: 24px; 
+    width: 50px;
+    height: 80px;
+    border-radius: 20%; 
+    cursor: pointer;
+    opacity: 0.6; 
+    transition: opacity 0.3s;
+}
+
+
+
+@media (max-width: 768px) {
+    .movie {
+        flex: 1 1 150px; 
+    }
+}
+
+/* For large mobile devices */
+@media (max-width: 600px) {
+    .movies {
+        justify-content: center; /* Adjust alignment as needed */
+    }
+    .movie {
+        flex: 1 1 120px; /* Even smaller base width for mobile */
+        min-width: 120px; /* Minimum width */
+    }
+}
+
+/* For small mobile devices */
+@media (max-width: 480px) {
+    .movie {
+        flex: 1 1 100px; /* Adjust base width for very small screens */
+        min-width: 100px; /* Set a minimum width to stop resizing */
+    }
+}
+/*
+.DunePartTwo1 {
+    width: 1511px;
+    height: 485px;
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+
+.WatchBtn {
+    width: 169.94px;
+    height: 35.13px;
+    left: 837px;
+    top: 332.77px;
+    position: absolute;
+}
+
+.TrailerBtn {
+    width: 169.94px;
+    height: 35.13px;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.58);
+    border-radius: 34px;
+}
+
+.PlayButton1 {
+    width: 18.50px;
+    height: 15.61px;
+    left: 137.57px;
+    top: 9.76px;
+    position: absolute;
+}
+
+.MovDes {
+    width: 261.27px;
+    height: 17.57px;
+    left: 837px;
+    top: 285.93px;
+    position: absolute;
+    color: black;
+    font-size: 15px;
+    font-family: 'Outfit';
+    font-weight: 400;
+    text-transform: capitalize;
+    word-wrap: break-word;
+}
+
+.CirclesForSlides, .Ellipse5, .Ellipse3, .Ellipse4, .Ellipse1 {
+    width: 112.93px;
+    height: 16.59px;
+    left: 156.07px;
+    top: 416.69px;
+    position: absolute;
+    background: rgba(217, 217, 217, 0.55);
+    border-radius: 9999px;
+}
+
+.Rating {
+    width: 115.69px;
+    height: 80.02px;
+    left: 1171.11px;
+    top: 314.23px;
+    position: absolute;
+}
+
+.RatingEclipse {
+    width: 115.69px;
+    height: 80.02px;
+    left: 115.69px;
+    top: 0;
+    position: absolute;
+    transform: rotate(180deg);
+    transform-origin: 0 0;
+    background: rgba(0, 0, 0, 0.82);
+    border-radius: 9999px;
+}
+
+/* Continue for other styles... */
