@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
 import ReactDOM from 'react-dom/client';
 import './homepage.css';
 import imdbLogo from './images/imdblogo.png';
@@ -11,6 +12,8 @@ import sMov from './images/s-mov.png';
 import fMov from './images/f-mov.png';
 import kfMov from './images/kf-mov.png';
 
+
+  
 // for the buttons on the side of the movies
 const ArrowButton = ({ direction }) => {
     return (
@@ -19,7 +22,7 @@ const ArrowButton = ({ direction }) => {
         </button>
       );
   };
-    
+
 
 // this gets you the circle with the score of the movie 
 function CircleScore({ score, size = 100, strokeWidth = 10 }) {
@@ -73,8 +76,40 @@ function CircleScore({ score, size = 100, strokeWidth = 10 }) {
 
 // houses all elements on the home page
 function Homepage() {
-  // State to keep track of the currently active content
+  // state to keep track of the currently active content
   const [activeContent, setActiveContent] = useState('movies');
+
+  const [displayCount, setDisplayCount] = useState(6); // shows 6 movies
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 900) {
+        setDisplayCount(2);
+      } else if (window.innerWidth < 1100) {
+        setDisplayCount(3);
+      } else if (window.innerWidth < 1300){
+          setDisplayCount(4);
+      } else if (window.innerWidth < 1500) { 
+        setDisplayCount(5);
+      } else { 
+        setDisplayCount(6);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const movies = [
+    { img: dMov, title: "Dune: Part 2" },
+    { img: pMov, title: "Pulp Fiction" },
+    { img: kMov, title: "Kung Fu Panda 4" },
+    { img: sMov, title: "Space Odyssey" },
+    { img: fMov, title: "Fight Club" },
+    { img: kfMov, title: "Killers of the Flower Moon" },
+  ];
 
   // Function to change the active content based on button clicked
   const handleChangeContent = (newContent) => {
@@ -137,30 +172,12 @@ function Homepage() {
                         <div className = "mov-holder">
                             <div className="movies">
                             <ArrowButton direction="left" />
-                                <div className="movie">
-                                    <img className="mov-img" src={dMov} alt="Dune: Part 2" />
-                                    <p className="mov-title2">Dune: Part 2</p>
+                            {movies.slice(0, displayCount).map((movie, index) => (
+                                <div className="movie" key={index}>
+                                    <img className="mov-img" src={movie.img} alt={movie.title} />
+                                    <p className="mov-title2">{movie.title}</p>
                                 </div>
-                                <div className="movie">
-                                    <img className="mov-img" src={pMov} alt="Pulp Fiction" />
-                                    <p className="mov-title2">Pulp Fiction</p>
-                                </div>
-                                <div className="movie">
-                                    <img className="mov-img" src={kMov} alt="Kung Fu Panda 4" />
-                                    <p className="mov-title2">Kung Fu Panda 4</p>
-                                </div>
-                                <div className="movie">
-                                    <img className="mov-img" src={sMov} alt="Space Odyssey" />
-                                    <p className="mov-title2">Space Odyssey</p>
-                                </div>
-                                <div className="movie">
-                                    <img className="mov-img" src={fMov} alt="Fight Club" />
-                                    <p className="mov-title2">Fight Club</p>
-                                </div>
-                                <div className="movie">
-                                    <img className="mov-img" src={kfMov} alt="Killers of the Flower Moon" />
-                                    <p className="mov-title2">Killers of the Flower Moon</p>
-                                </div>
+                            ))}
                                 <ArrowButton direction="right" />
                             </div>
                         </div>
