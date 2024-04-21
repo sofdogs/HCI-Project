@@ -4,37 +4,28 @@ html, body {
     background-color: #1E1E1E;
     width: 100%;
 }
+/* css for barbie poster and nav bar below*/
 
+/* styling for the main barbie img */
 .barbie-img{ 
     width: 100%;
     height: 70%;
     max-height: 1000px;
     object-fit: cover
 }
-
+/* lets you put the watch btn and rating over the pic*/
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 80%; /* Adjust based on the image height */
+    height: 80%; 
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Aligns content to the bottom */
-    padding: 20px; /* Add padding inside the overlay for spacing */
+    justify-content: flex-end; 
+    padding: 20px; 
 }
-
-.mov-des{
-    color: black; 
-    font-size: 28px;
-    padding-top: 30%;
-    padding-left: 50px;
-    font-family: 'Outfit';
-    font-weight: 400; 
-    word-wrap: break-word;
-    text-transform: capitalize;
-}
-
+/* score circle container */
 .score-cont{ 
     display: flex;
     justify-content: center;
@@ -43,15 +34,18 @@ html, body {
     padding-left: 45%;
     padding-top: 30%;
 }
+/* actual score element*/
 .circle-score {
     max-height: 100px; 
     flex-shrink: 0; 
 }
+/* for icon over watch trailer, not working*/
 .play-icon {
-    width: 20px; /* Example fixed width, adjust as needed */
-    height: auto; /* Keeps the aspect ratio */
-    margin-left: 10px; /* Space between text and icon */
+    width: 20px; 
+    height: auto; 
+    margin-left: 10px; 
 }
+/* watch button styling */
 .watch-btn{ 
     margin: 4px 10px;
     font-size: 20px;
@@ -67,124 +61,219 @@ html, body {
     border: 0.0px black solid;
     display: flex;
     justify-content: center;
-    align-items: center; /* Center text and icon within the button */
+    align-items: center; 
 }
+
+/* styling for buttons and content below them */
+
+/* container for the movie,cast, and review buttons */
 .title-holder{ 
-    display: flex; /* This enables Flexbox for the container */
-    justify-content: space-around; /* This spreads out the child elements evenly */
-    align-items: center; /* This centers the items vertically */
-    width: 100%;
-    height:100%;
-    background-color: aliceblue;
-    
+  display: flex; /* This enables flexbox for the container */
+  justify-content: space-around; 
+  width: 100%; 
+  height:100%;    /* changing this doesnt affect? */
 }
+/* cast dets, movie dets, and review buttons styling */
 .Rectangle4, .Rectangle5, .Rectangle6 {
-    width: 100%; /* Adjusts the width to take up less space so they fit side by side */
-    height: 150px; /* Example height, adjust as needed */
-    background: white;
-    border: 1px black solid;
-    font-size: 40px;
-    word-wrap: break-word;
-    font-weight: 700;
-
+  width: 100%; 
+  height: 150px; 
+  background: white;
+  border: 1px black solid;
+  font-size: 40px;
+  word-wrap: break-word;
+  font-weight: 700;
+}
+/* hover effect */
+.Rectangle4:hover{ 
+    color:#FBD651;
+}
+.Rectangle5:hover{ 
+    color:#FBD651;
+}
+.Rectangle6:hover{ 
+    color:#FBD651;
 }
 
-.mov-title{ 
-    margin: 10px 0;
-    padding: 15px;
-    margin-left: 20px;
-    color: white; 
-    font-size: 48px;
-    font-family: 'Outfit';
-    font-weight: 700; 
-    word-wrap: break-word;
-    text-transform: capitalize;
-    padding-bottom: 2px;
-}
-.mov-att{ 
-    margin: 10px 0;
-    padding: 15px;
-    padding-top: 0px;
-    margin-left: 20px;
-    color: white; 
-    font-size: 20px;
-    font-family: 'Outfit';
-    font-weight: 700; 
-    word-wrap: break-word;
-    text-transform: capitalize;
-    padding-bottom: 2px;
-}
-.bPost {
-    flex-shrink: 0; 
-    width: 200px;
-    height: 300px;
-  }
+/* styling when movie details button is pressed */
+
+/* container for movie details info */
 .details-container {
-    display: flex;
-    padding: 20px;
-  }
+  display: flex;
+  padding: 20px;
+}
+/* container for mov title, att, and further descriptions */
 .details-holder {
   display: flex;
   background-color: #1E1E1E;
   align-items: flex-start; 
-  gap: 20px; 
+  gap: 30px; 
 }
 
+/* "barbie" title syling  */
+.mov-title{ 
+  margin: 10px 0;
+  padding: 15px;
+  margin-left: 20px;
+  color: white; 
+  font-size: 48px;
+  font-family: 'Outfit';
+  font-weight: 700; 
+  word-wrap: break-word;
+  text-transform: capitalize;
+  padding-bottom: 2px;
+}
+/* stying for 2023/PG-13/hour */
+.mov-att{ 
+  margin: 10px 0;
+  padding: 15px;
+  padding-top: 0px;
+  margin-left: 20px;
+  color: white; 
+  font-size: 20px;
+  font-family: 'Outfit';
+  font-weight: 700; 
+  word-wrap: break-word;
+  text-transform: capitalize;
+  padding-bottom: 2px;
+}
+/* baribe movie poster */
+.bPost {
+  flex-shrink: 0; 
+  width: 200px;
+  height: 300px;
+}
+/* baribe movie poster */
 .movie-details {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    color: white;
-    flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: white;
+  flex-grow: 1;
+}
+/* movie description */
+.mov-info{ 
+  color: white; 
+  font-size: 20px;
+}
+.mov-title, .mov-att, .mov-info {
+  margin: 0; 
+  padding: 0 15px;
+}
+/* cotainer for adventure, fantasy, and comedy "buttons" */
+.button-container {
+  display: flex; 
+  gap: 1px; 
+}
+/* styling for adventure, fantasy, and comedy */
+.attributes{ 
+  margin: 4px 10px;
+  font-size: 18px;
+  color: white; 
+  max-width: 100px;
+  height: 45%;
+  font-family: Outfit;
+  text-align: center;
+  font-weight: 900;
+  word-wrap: break-word; 
+  background-color: transparent;
+  padding: 8px;
+  border-radius: 34px;
+  border: 1.0px rgb(167, 157, 157) solid;
+}
+/* styling for director, writers, and starts */
+.sub-title{ 
+  color: white; 
+  font-size: 20px;
+  font-weight: 800;
+  margin: 1; 
+  padding: 0 15px;
+}
+/* container for sub title names */
+.info-container {
+  display: flex; /* aligns children (the <p> tags) in a row */
+  align-items: center;
+  gap: 10px; 
+}
+/* styling for director etc names */
+.des-title{ 
+  font-size: 18px;
+  color: rgb(252, 140, 158);
+}
+/* spacing */
+.sub-title, .des-title {
+  margin: 0;
+}
+
+/* styling components under full cast button  */
+
+
+.cast-gallery-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 15px 20px; /* Row gap then column gap */
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+
+.header {
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 26px;
+  color: black;
+}
+
+.cast-member-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between image and name */
+}
+
+
+.cast-member {
+  display: flex;
+  align-items: center; 
+  gap: 10px; 
+  font-size: 10px;
+  color: white;
+}
+
+.cast-name, .cast-role {
+  font-size: 26px; 
+  padding: 5px; 
+  color: black;;
+}
+
+.details2-container{
+display: flex;
+flex-direction: column; 
+align-items: center; 
+gap: 20px;
+}
+
+.details2-holder{ 
+  text-align: center;
+}
+.cast-photo {
+  width: 50px; 
+  height: 50px; 
+  border-radius: 50%; /* Circular images */
+  object-fit: cover;
+}
+
+
+/*
+  .cast-photo {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    object-fit: cover;
   }
 
-  .mov-info{ 
-      color: white; 
-      font-size: 20px;
+    .cast-photo {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
   }
-  .mov-title, .mov-att, .mov-info {
-    margin: 0; 
-    padding: 0 15px;
-  }
-
-  .button-container {
-    display: flex; /* Align children in a row */
-    gap: 1px; /* Optional: Adds space between buttons */
-  }
-
-  .attributes{ 
-    margin: 4px 10px;
-    font-size: 18px;
-    color: white; 
-    max-width: 100px;
-    height: 45%;
-    font-family: Outfit;
-    text-align: center;
-    font-weight: 900;
-    word-wrap: break-word; 
-    background-color: transparent;
-    padding: 8px;
-    border-radius: 34px;
-    border: 1.0px rgb(167, 157, 157) solid;
-  }
-
-  .sub-title{ 
-      color: white; 
-      font-size: 20px;
-      font-weight: 800;
-      margin: 1; 
-      padding: 0 15px;
-  }
-  .info-container {
-    display: flex; /* Aligns children (the <p> tags) in a row */
-    align-items: center; /* Optional: Vertically centers the items if their heights differ */
-    gap: 10px; /* Optional: Adds some space between the elements */
-  }
-  .des-title{ 
-    font-size: 18px;
-    color: rgb(252, 140, 158);
-  }
-  .sub-title, .des-title {
-    margin: 0; /* Removes the default margin to prevent unwanted spacing */
-    /* Additional styling here */
-  }
+*/

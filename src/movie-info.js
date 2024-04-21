@@ -56,6 +56,54 @@ function CircleScore({ score, size = 100, strokeWidth = 10 }) {
     );
   }
 
+const castMembers = [
+  { id: 1, name: "Margot Robbie", role: "Barbie", imageUrl: "./images/mr-pic.png" },
+  { id: 2, name: "Issa Rae",role: "Barbie", imageUrl: "./images/ir-pic.png" },
+  { id: 3, name: "Kate McKinnon", role: "Barbie", imageUrl: "/path-to-image-2.jpg" },
+  { id: 4, name: "Alexandra Shipp",role: "Barbie",  imageUrl: "/path-to-image-2.jpg" },
+  { id: 5, name: "Emma Mackey",role: "Barbie", imageUrl: "/path-to-image-2.jpg" },
+  { id: 6, name: "Hari Nef", role: "Barbie", imageUrl: "/path-to-image-2.jpg" },
+  { id: 7, name: "Sharon Rooney", role: "Barbie", imageUrl: "/path-to-image-2.jpg" },
+  { id: 8, name: "Ana Cruz Kayne", role: "Barbie", imageUrl: "/path-to-image-2.jpg" },
+
+];
+function CastMember({ name, imageUrl, role }) {
+  return (
+    // Apply 'display: flex' to layout contents horizontally
+    <div className="cast-member" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+      <img src={imageUrl} alt={name} className="cast-photo" style={{ width: '50px', height: '50px', borderRadius: '50%' }} />
+      <div>
+        <div className="cast-name">{name}</div>
+        <div className="cast-role">{role}</div>
+      </div>
+    </div>
+  );
+}
+
+function CastGallery({ cast }) {
+  return (
+    <div className="cast-gallery-container">
+      {/* Headers */}
+      <div className="header">Cast</div>
+      <div className="header">Role</div>
+
+      {/* Cast Members and Roles, now wrapped in React.Fragment */}
+      {cast.map((member) => (
+        <React.Fragment key={member.id}> {/* Ensure each pair has a single parent */}
+          <div className="cast-member-container">
+            <img src={member.imageUrl} alt={member.name} className="cast-photo" />
+            <div className="cast-name">{member.name}</div>
+          </div>
+          <div className="cast-role">{member.role}</div>
+        </React.Fragment>
+      ))}
+    </div>
+  );
+}
+
+
+
+
 function MovieInfo() {
     const [activeContent, setActiveContent] = useState('movies');
 
@@ -134,16 +182,21 @@ function MovieInfo() {
                     </div>
                   </div>
                 </div>}
-              {activeContent === 'cast-dets' && <div>
-                <div className="details-container">
-                      <div className = "details-holder"> 
-                        <div className="movie-details">
-                          <p className = "mov-title"> Full Cast and Crew</p>
-                          <p className = "mov-att"> Cast</p>
-                        </div>
-                      </div> 
-                </div>
-              </div>}
+                {activeContent === 'cast-dets' && (
+                  <div className="details2-container">
+                    <div className="details2-holder">
+                      {/* Titles */}
+                      <div className="movie-details">
+                        <p className="mov-title">Full Cast and Crew</p>
+                      </div>
+                    </div>
+                    {/* Cast Gallery */}
+                    <div>
+                      <CastGallery cast={castMembers} />
+                    </div>
+                  </div>
+                )}
+
             </main>
         </div>
     );
