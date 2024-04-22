@@ -8,7 +8,7 @@ import MovieInfo from './movie-info';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <MovieInfo />
+    <MovieInfo/>
   </React.StrictMode>
 );
 

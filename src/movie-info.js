@@ -11,6 +11,8 @@ import emPic from './images/em-pic.png'
 import hnPic from './images/hn-pic.png' 
 import srPic from './images/sr-pic.png' 
 import akPic from './images/ak-pic.png' 
+import rgPic from './images/rg-pic.png' 
+import dlPic from './images/dl-pic.png' 
 
 // this gets you the circle with the score of the movie 
 function CircleScore({ score, size = 100, strokeWidth = 10 }) {
@@ -147,7 +149,16 @@ function MovieInfo() {
                     <div className = "details-holder"> 
                       <img className="bPost" src={bPost} alt="poster" />
                       <div className="movie-details">
+                      <nav className="b-nav"> 
                         <p className = "b-title"> Barbie</p>
+                        <div className = "rating">
+                          <p className = "imdb">IMDb Rating</p>
+                          <div className = "rating2">
+                            <div class = "star"></div>
+                            <p className = "imdb"> 6.8/10</p>
+                          </div>
+                        </div>
+                      </nav>
                         <p className = "mov-att"> 2023 / PG-13/ 1h 54m</p>
                         <div className="button-container">
                           <button className = "attributes">Adventure</button>
@@ -175,20 +186,36 @@ function MovieInfo() {
                   </div>
                 </div>}
                 {activeContent === 'cast-dets' && (
-                  <div className="details2-container">
-                    <div className="details2-holder">
-                      {/* Titles */}
-                      <div className="movie-details">
-                        <p className="mov-title">Full Cast and Crew</p>
+                    <div className = "cast-dets-container">
+                      <div className="details2-container">
+                        <div className = "options-container"> 
+                          <button className="cast-info" onClick={() => handleChangeContent('full-cast-dets')}>Full Cast</button>
+                          <button className="cast-info" onClick={() => handleChangeContent('produced-dets')}>Produced By</button>
+                          <button className="cast-info" onClick={() => handleChangeContent('art-dets')}>Art Direction</button>
+                          <button className="cast-info" onClick={() => handleChangeContent('music-dets')}>Music By</button>
+                          <button className="cast-info" onClick={() => handleChangeContent('all-dets')}>All Credits</button>
+                        </div>
+                        <div className="right-side-container">
+                          <p className="cast-title">Top Cast</p>
+                              <div className="top-cast-container">
+                                <img className="top"  src={mrPic} alt="IMDb Logo" />
+                                <img className="top"  src={rgPic} alt="IMDb Logo" />
+                                <img className="top"  src={irPic} alt="IMDb Logo" />
+                                <img className="top"  src={dlPic} alt="IMDb Logo" />
+                              </div>
+                              <p className="cast-title">Full Cast and Crew</p>
+                              <div className="details2-holder">
+                                <div>
+                                  <CastGallery cast={castMembers} />
+                                </div>
+                              </div>
+                        </div>
+                        {activeContent === 'produced-dets' && (
+                          <p className="cast-title">Full Cast and Crew</p>
+                        )}
                       </div>
                     </div>
-                    {/* Cast Gallery */}
-                    <div>
-                      <CastGallery cast={castMembers} />
-                    </div>
-                  </div>
-                )}
-
+                  )}
             </main>
         </div>
     );
