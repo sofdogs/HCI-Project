@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import ReactDOM from 'react-dom/client';
 import './homepage.css';
 import imdbLogo from './images/imdblogo.png';
-import { Link } from 'react-router-dom';
 import dunePost from './images/dune-poster.png';
 import dMov from './images/d-mov.png';
 import pMov from './images/p-mov.png';
@@ -13,7 +11,7 @@ import fMov from './images/f-mov.png';
 import kfMov from './images/kf-mov.png';
 
 
-  
+
 // for the buttons on the side of the movies
 const ArrowButton = ({ direction }) => {
     return (
@@ -168,8 +166,8 @@ function Homepage() {
                     </header> 
                     { /* section for housing different movies and their titles */}
                     {activeContent === 'movies' && <div>
-                        <p className = "mov-title"> See What's Trending Now</p>
                         <div className = "mov-holder">
+                        <p className = "mov-title"> See What's Trending Now</p>
                             <div className="movies">
                             <ArrowButton direction="left" />
                             {movies.slice(0, displayCount).map((movie, index) => (

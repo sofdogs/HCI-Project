@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom/client';
 import './movie-info.css';
 import imdbLogo from './images/imdblogo.png';
 import barbiePost from './images/barbie-poster.png'
-import playIcon from './images/play-icon.png'
 import bPost from './images/barb-post.png'
-
+import mrPic from './images/mr-pic.png'
+import irPic from './images/ir-pic.png' 
+import kmPic from './images/km-pic.png' 
+import asPic from './images/as-pic.png' 
+import emPic from './images/em-pic.png' 
+import hnPic from './images/hn-pic.png' 
+import srPic from './images/sr-pic.png' 
+import akPic from './images/ak-pic.png' 
 
 // this gets you the circle with the score of the movie 
 function CircleScore({ score, size = 100, strokeWidth = 10 }) {
@@ -57,28 +62,16 @@ function CircleScore({ score, size = 100, strokeWidth = 10 }) {
   }
 
 const castMembers = [
-  { id: 1, name: "Margot Robbie", role: "Barbie", imageUrl: "./images/mr-pic.png" },
-  { id: 2, name: "Issa Rae",role: "Barbie", imageUrl: "./images/ir-pic.png" },
-  { id: 3, name: "Kate McKinnon", role: "Barbie", imageUrl: "/path-to-image-2.jpg" },
-  { id: 4, name: "Alexandra Shipp",role: "Barbie",  imageUrl: "/path-to-image-2.jpg" },
-  { id: 5, name: "Emma Mackey",role: "Barbie", imageUrl: "/path-to-image-2.jpg" },
-  { id: 6, name: "Hari Nef", role: "Barbie", imageUrl: "/path-to-image-2.jpg" },
-  { id: 7, name: "Sharon Rooney", role: "Barbie", imageUrl: "/path-to-image-2.jpg" },
-  { id: 8, name: "Ana Cruz Kayne", role: "Barbie", imageUrl: "/path-to-image-2.jpg" },
+  { id: 1, name: "Margot Robbie", role: "Barbie", imageUrl: mrPic },
+  { id: 2, name: "Issa Rae",role: "Barbie", imageUrl: irPic },
+  { id: 3, name: "Kate McKinnon", role: "Barbie", imageUrl: kmPic },
+  { id: 4, name: "Alexandra Shipp",role: "Barbie",  imageUrl: asPic },
+  { id: 5, name: "Emma Mackey",role: "Barbie", imageUrl: emPic},
+  { id: 6, name: "Hari Nef", role: "Barbie", imageUrl: hnPic },
+  { id: 7, name: "Sharon Rooney", role: "Barbie", imageUrl: srPic },
+  { id: 8, name: "Ana Cruz Kayne", role: "Barbie", imageUrl: akPic },
 
 ];
-function CastMember({ name, imageUrl, role }) {
-  return (
-    // Apply 'display: flex' to layout contents horizontally
-    <div className="cast-member" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-      <img src={imageUrl} alt={name} className="cast-photo" style={{ width: '50px', height: '50px', borderRadius: '50%' }} />
-      <div>
-        <div className="cast-name">{name}</div>
-        <div className="cast-role">{role}</div>
-      </div>
-    </div>
-  );
-}
 
 function CastGallery({ cast }) {
   return (
@@ -87,9 +80,8 @@ function CastGallery({ cast }) {
       <div className="header">Cast</div>
       <div className="header">Role</div>
 
-      {/* Cast Members and Roles, now wrapped in React.Fragment */}
       {cast.map((member) => (
-        <React.Fragment key={member.id}> {/* Ensure each pair has a single parent */}
+        <React.Fragment key={member.id}> 
           <div className="cast-member-container">
             <img src={member.imageUrl} alt={member.name} className="cast-photo" />
             <div className="cast-name">{member.name}</div>
@@ -155,7 +147,7 @@ function MovieInfo() {
                     <div className = "details-holder"> 
                       <img className="bPost" src={bPost} alt="poster" />
                       <div className="movie-details">
-                        <p className = "mov-title"> Barbie</p>
+                        <p className = "b-title"> Barbie</p>
                         <p className = "mov-att"> 2023 / PG-13/ 1h 54m</p>
                         <div className="button-container">
                           <button className = "attributes">Adventure</button>

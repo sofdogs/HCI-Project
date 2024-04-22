@@ -1,12 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
-} from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import Homepage from './homepage';
 import MovieInfo from './movie-info';

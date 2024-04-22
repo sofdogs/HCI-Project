@@ -186,11 +186,11 @@ html, body {
     padding: 20px; 
 }
 .mov-title{ 
-    margin: 10px 0;
+    margin: 20px 0;
     padding: 15px;
     margin-left: 20px;
     color: white; 
-    font-size: 32px;
+    font-size: 38px;
     font-family: 'Outfit';
     font-weight: 700; 
     word-wrap: break-word;
@@ -221,6 +221,7 @@ html, body {
     max-width: 300px; 
     margin-bottom: 10px;
 }
+
 .mov-title2 {
     margin-top: 10px;
     color: white; 
